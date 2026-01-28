@@ -5,8 +5,12 @@
 
 class CursorBall {
     constructor() {
-        // Don't initialize on mobile/touch devices
-        if (this.isMobileDevice()) {
+        // Detect Safari - disable custom cursor entirely due to performance issues
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+        // Don't initialize on Safari or mobile/touch devices
+        if (isSafari || this.isMobileDevice()) {
+            console.log('Custom cursor disabled on Safari/mobile for better performance');
             return;
         }
 

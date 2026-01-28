@@ -2467,6 +2467,17 @@ button {
     /* Hide default cursor */
 }
 
+/* Safari: Use native cursor (custom cursor disabled for performance) */
+@supports (-webkit-hyphens:none) {
+
+    html,
+    body,
+    a,
+    button {
+        cursor: auto !important;
+    }
+}
+
 .custom-cursor {
     position: fixed;
     top: 0;
