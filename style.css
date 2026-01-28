@@ -241,10 +241,11 @@ body.loaded main {
 /* ===== END LOADING SCREEN ===== */
 
 /* ===== FONT DECLARATIONS ===== */
-/* BBH Bartle Font - Using TTF format for compatibility */
+/* BBH Bartle Font - Optimized for Safari: WOFF2 + TTF fallback */
 @font-face {
     font-family: 'BBH Bartle';
-    src: url('assets/fonts/BBHSansBartle-Regular.ttf') format('truetype');
+    src: url('assets/fonts/BBHSansBartle-Regular.woff2') format('woff2'),
+        url('assets/fonts/BBHSansBartle-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -252,7 +253,8 @@ body.loaded main {
 
 @font-face {
     font-family: 'BBH Bartle';
-    src: url('assets/fonts/BBHSansBartle-Regular.ttf') format('truetype');
+    src: url('assets/fonts/BBHSansBartle-Regular.woff2') format('woff2'),
+        url('assets/fonts/BBHSansBartle-Regular.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -260,7 +262,8 @@ body.loaded main {
 
 @font-face {
     font-family: 'BBH Bartle';
-    src: url('assets/fonts/BBHSansBartle-Regular.ttf') format('truetype');
+    src: url('assets/fonts/BBHSansBartle-Regular.woff2') format('woff2'),
+        url('assets/fonts/BBHSansBartle-Regular.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
