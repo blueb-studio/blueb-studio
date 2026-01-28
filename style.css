@@ -240,6 +240,34 @@ body.loaded main {
 
 /* ===== END LOADING SCREEN ===== */
 
+/* ===== FONT DECLARATIONS ===== */
+/* BBH Bartle Font - Using TTF format for compatibility */
+@font-face {
+    font-family: 'BBH Bartle';
+    src: url('assets/fonts/BBHSansBartle-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BBH Bartle';
+    src: url('assets/fonts/BBHSansBartle-Regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BBH Bartle';
+    src: url('assets/fonts/BBHSansBartle-Regular.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ===== END FONT DECLARATIONS ===== */
+
 /* ===== LARGE IMAGE SECTION ===== */
 .large-image-section {
     padding: 55px var(--page-padding) 55px var(--page-padding);
