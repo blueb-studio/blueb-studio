@@ -1,6 +1,6 @@
 /**
- * Custom Cursor Ball
- * A smooth cursor-following ball with elastic lag and interactive states
+ * Custom Cursor Ball - Safari Optimized
+ * Uses hardware-accelerated transforms for smooth 60fps animation
  */
 
 class CursorBall {
@@ -18,10 +18,16 @@ class CursorBall {
         this.mouseY = 0;
         this.ballX = 0;
         this.ballY = 0;
-        this.speed = 0.15; // Lower = smoother lag
+
+        // Detect Safari for optimizations
+        this.isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+        // Adjust speed for Safari (slightly faster to feel more responsive)
+        this.speed = this.isSafari ? 0.2 : 0.15; // Lower = smoother lag
 
         this.isHovering = false;
         this.isClicking = false;
+        this.animationFrame = null;
 
         this.init();
     }
@@ -32,11 +38,11 @@ class CursorBall {
     }
 
     init() {
-        // Track mouse position
+        // Track mouse position with passive listener for better performance
         document.addEventListener('mousemove', (e) => {
             this.mouseX = e.clientX;
             this.mouseY = e.clientY;
-        });
+        }, { passive: true });
 
         // Click animation
         document.addEventListener('mousedown', () => {
@@ -57,18 +63,18 @@ class CursorBall {
     }
 
     addHoverListeners() {
-        const interactiveElements = 'a, button, .nav-link, .btn-hire, .challenge-btn, .view-work-btn, #theme-toggle';
+        const interactiveElements = 'a, button, .nav-link, .btn-hire, .challenge-btn, .view-work-btn, #theme-toggle, .btn-studio';
 
         document.querySelectorAll(interactiveElements).forEach(el => {
             el.addEventListener('mouseenter', () => {
                 this.isHovering = true;
                 this.ball.classList.add('hovering');
-            });
+            }, { passive: true });
 
             el.addEventListener('mouseleave', () => {
                 this.isHovering = false;
                 this.ball.classList.remove('hovering');
-            });
+            }, { passive: true });
         });
     }
 
@@ -77,11 +83,21 @@ class CursorBall {
         this.ballX += (this.mouseX - this.ballX) * this.speed;
         this.ballY += (this.mouseY - this.ballY) * this.speed;
 
-        // Update position
-        this.ball.style.left = `${this.ballX}px`;
-        this.ball.style.top = `${this.ballY}px`;
+        // Use transform3d for hardware acceleration (much better for Safari)
+        // This triggers GPU rendering and is smoother than left/top
+        this.ball.style.transform = `translate3d(${this.ballX}px, ${this.ballY}px, 0) translate(-50%, -50%)${this.isHovering ? ' scale(1.5)' : ''}`;
 
-        requestAnimationFrame(() => this.animate());
+        this.animationFrame = requestAnimationFrame(() => this.animate());
+    }
+
+    // Cleanup method
+    destroy() {
+        if (this.animationFrame) {
+            cancelAnimationFrame(this.animationFrame);
+        }
+        if (this.ball && this.ball.parentNode) {
+            this.ball.parentNode.removeChild(this.ball);
+        }
     }
 }
 
@@ -89,3 +105,4 @@ class CursorBall {
 window.addEventListener('DOMContentLoaded', () => {
     new CursorBall();
 });
+
