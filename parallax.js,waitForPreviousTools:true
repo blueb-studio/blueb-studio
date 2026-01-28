@@ -1,0 +1,45 @@
+// Parallax Scroll Effect for Video Section & Hero
+document.addEventListener('DOMContentLoaded', () => {
+    const videoSection = document.querySelector('.video-portfolio-section');
+    const video = document.querySelector('.portfolio-video');
+    const heroSection = document.querySelector('.hero');
+
+    let ticking = false;
+
+    function updateParallax() {
+        // --- Video Parallax ---
+        if (videoSection && video) {
+            const rect = videoSection.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+
+            if (rect.top < viewportHeight && rect.bottom > 0) {
+                const totalDistance = viewportHeight + rect.height;
+                const distanceTravelled = viewportHeight - rect.top;
+                const progress = distanceTravelled / totalDistance;
+                const movementRange = 15;
+                const offset = (progress - 0.5) * movementRange;
+                video.style.transform = `translate3d(-50%, calc(-50% + ${offset}%), 0)`;
+            }
+        }
+
+        // --- Hero Parallax ---
+        if (heroSection) {
+            const scrollY = window.scrollY;
+            // Move hero down as we scroll, but slower (30% of scroll speed)
+            // This makes it look like it's staying behind/moving slower
+            heroSection.style.transform = `translate3d(0, ${scrollY * 0.3}px, 0)`;
+        }
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    });
+
+    // Initial update
+    updateParallax();
+});

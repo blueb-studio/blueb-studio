@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Condition | Creative Design Studio | Blueberry Studio | Crafted By Community</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/jpeg" href="favicon-v2.jpg">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific page overrides if needed */
+        .terms-main {
+            padding-top: 180px;
+            padding-bottom: 40px;
+            min-height: 100vh;
+        }
+
+        .terms-main+.site-footer {
+            margin-top: -200px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loading Screen (Standard) -->
+    <div id="loader-screen" class="loader-screen">
+        <div class="loader-logo-container">
+            <img src="logo-new.png" alt="Blueberry Logo" class="loader-logo">
+        </div>
+        <div class="loader-box">
+            <div class="loader-text-grid">
+                <div class="loader-static">We are</div>
+                <div class="loader-dynamic-wrapper">
+                    <div id="loader-highlight" class="loader-highlight"></div>
+                    <div class="loader-dynamic-clip">
+                        <div id="loader-text" class="loader-dynamic-text">transparent</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="loader-progress-container">
+            <div id="loader-progress-bar" class="loader-progress-bar"></div>
+            <div id="loader-percentage" class="loader-percentage">0%</div>
+        </div>
+    </div>
+
+    <div id="theme-toggle"></div>
+
+    <header class="header">
+        <div class="header-left">
+            <a href="index.html" class="logo-link">
+                <img src="logo-new.png" alt="Blueberry Logo" class="logo-image">
+                <span class="logo-text">Creative Design Studio</span>
+            </a>
+        </div>
+        <nav class="header-right">
+            <div class="header-right-nav-items">
+                <a href="projects.html" class="header-nav-item">Projects</a>
+                <a href="about.html" class="header-nav-item">About</a>
+                <a href="contact.html" class="header-nav-item">Contact</a>
+            </div>
+            <button class="menu-btn" aria-label="Menu" id="menu-btn">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </button>
+        </nav>
+    </header>
+
+
+
+    <main class="terms-main">
+        <section class="terms-section">
+            <div class="terms-container">
+                <h1 class="terms-heading">Terms and Conditions</h1>
+
+                <div class="terms-content">
+                    <p class="terms-intro">Blueberry Studio provides both standardized web management support, and
+                        tailored Service Level Agreements so you can focus on your business needs and leave the
+                        technicals to us.</p>
+
+                    <h2>Standard Web Management</h2>
+                    <p>Blueberry Studio’s Standard Website Management provides proactive, end-to-end support for your
+                        website and web infrastructure in adherence with industry standard best practices. A
+                        comprehensive analysis of your platform and it’s needs are conducted, which will inform on
+                        certain aspects of the management agreement we recommend. All of Blueberry Studio’s Standard
+                        Management Agreements include hosting of your website on one of our best-in-class hosting
+                        providers. The following support is offered within all of our agreements:</p>
+
+                    <ul>
+                        <li>Continued updates of your CMS to the latest full stable version releases</li>
+                        <li>Updating of Website Plug-ins (when applicable)</li>
+                        <li>Installing up-to-date Security Patches (when applicable)</li>
+                        <li>Monthly local back-up of site (Made on the 1st of each month)</li>
+                        <li>Testing and updating links</li>
+                        <li>Adding new content (blog posts, new photos, new sections etc.)</li>
+                        <li>Optimizing Loading Times</li>
+                        <li>Regular Security Scans</li>
+                        <li>Monthly Basic Security Report</li>
+                        <li>Basic SEO practices:
+                            <ul>
+                                <li>Issues with Robot.txt, Alt Tag updates, meta-data, keywords, google analytics report
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Bug Patching</li>
+                        <li>Monthly Reporting on:
+                            <ul>
+                                <li>Site Performance</li>
+                                <li>Site Security</li>
+                                <li>Competitive Analysis</li>
+                                <li>SEO Health + Improvement Areas</li>
+                                <li>Up Time Monitoring</li>
+                                <li>Server & Infrastructure Performance</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="unlock-section">
+            <div class="unlock-container">
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-top">
+                <!-- Left Column: Contact & Newsletter -->
+                <div class="footer-col footer-col-left">
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <a href="contact.html" class="btn-studio">Let's Talk</a>
+                    </div>
+                    <a href="mailto:hello@blueb.studio" class="footer-email" aria-label="Copy email address"
+                        data-tooltip="Click to copy" style="margin-top: 0;">hello@blueb.studio</a>
+
+                    <!-- Newsletter Signup Form -->
+                    <div class="footer-newsletter">
+                        <form id="newsletterForm" class="newsletter-form">
+                            <div class="newsletter-input-group">
+                                <input type="email" name="email" id="newsletter-email" class="newsletter-input"
+                                    placeholder="Enter your email" required aria-label="Email address for newsletter">
+                                <button type="submit" class="newsletter-submit" aria-label="Subscribe to newsletter">
+                                    Subscribe
+                                </button>
+                            </div>
+                        </form>
+
+                        <div id="newsletterSuccess" class="newsletter-success" style="display: none;">
+                            <p>✓ Welcome to our newsletter!</p>
+                        </div>
+                    </div>
+
+                    <div class="footer-info-grid">
+                        <div class="footer-info-item">
+                            <p class="footer-info-label">Job Applications</p>
+                            <a href="mailto:founder@blueb.studio" class="footer-link-text">founder@blueb.studio</a>
+                        </div>
+
+                        <div class="footer-info-item">
+                            <p class="footer-info-label">Phone Number</p>
+                            <a href="tel:+919407824148" class="footer-link-text telephone">+91 94078 24148</a>
+                        </div>
+                    </div>
+
+
+
+                    <div class="footer-copyright">
+                        <span>&copy; BLUEBERRY CREATIVE CLUB 2026 | ALL RIGHTS RESERVED</span>
+                    </div>
+                </div>
+
+                <!-- Middle Column: Socials -->
+                <div class="footer-col footer-col-middle">
+                    <h3 class="footer-socials-heading">Follow us on</h3>
+                    <ul class="footer-socials">
+                        <li>
+                            <a href="https://www.behance.net/bluebstudio" target="_blank" class="btn-studio social-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M6.938 4.503c.702 0 1.34.06 1.92.188.577.13 1.07.33 1.485.61.41.28.733.65.96 1.12.225.47.34 1.05.34 1.73 0 .74-.17 1.36-.507 1.86-.338.5-.837.9-1.502 1.22.906.26 1.576.72 2.022 1.37.448.66.665 1.45.665 2.36 0 .75-.13 1.39-.41 1.93-.28.55-.67 1-1.16 1.35-.48.348-1.05.6-1.67.767-.61.165-1.252.254-1.91.254H0V4.51h6.938v-.007zM16.94 16.665c.44.428 1.073.643 1.894.643.59 0 1.1-.148 1.53-.447.424-.29.68-.61.78-.94h2.588c-.403 1.28-1.048 2.2-1.9 2.75-.85.56-1.884.83-3.08.83-.837 0-1.584-.13-2.272-.4-.673-.27-1.24-.65-1.72-1.14-.464-.49-.823-1.08-1.077-1.77-.253-.69-.373-1.45-.373-2.27 0-.803.135-1.54.403-2.23.27-.7.644-1.28 1.12-1.79.495-.51 1.063-.89 1.736-1.148.67-.26 1.403-.388 2.24-.388.903 0 1.683.17 2.37.506.686.34 1.256.79 1.714 1.38.448.588.78 1.27.994 2.05.21.78.3 1.61.3 2.49H14.23c0 .97.31 1.83.75 2.26l-.04.006zm-3.73-8.48c-.31-.34-.76-.51-1.36-.51-.4 0-.735.08-1.012.23-.278.16-.51.35-.69.58-.18.23-.317.49-.41.78-.092.295-.153.57-.176.83h4.69c-.18-.77-.53-1.36-.97-1.91h-.066zM15.83 7.013h4.968v1.186h-4.968V7.013z" />
+                                </svg>
+                                Behance
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/blueb.studio" target="_blank"
+                                class="btn-studio social-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                                </svg>
+                                Instagram
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/Blueb.studio/" target="_blank"
+                                class="btn-studio social-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
+                                Facebook
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/blueb-studio" target="_blank" class="btn-studio social-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z" />
+                                </svg>
+                                GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/blueb-studio" target="_blank"
+                                class="btn-studio social-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg>
+                                LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://open.spotify.com/user/31mnh5u7zrv3aj2t3qy35kmdyenm" target="_blank"
+                                class="btn-studio social-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141 4.2-1.32 9.6-.66 13.38 1.68.42.18.6.72.361 1.141zm.119-3.3c-3.839-2.28-10.26-2.46-13.919-1.32-.6.181-1.261-.239-1.44-.839-.18-.6.239-1.261.84-1.44 4.2-1.32 11.279-1.14 15.719 1.5.54.3.72.961.42 1.5-.239.54-.84.72-1.38.6z" />
+                                </svg>
+                                Spotify
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right Column: Legal & Blog -->
+                <div class="footer-col footer-col-right">
+                    <ul class="footer-legal">
+                        <li><a href="about.html" class="legal-link">ABOUT</a></li>
+                        <li><a href="projects.html" class="legal-link">PROJECTS</a></li>
+                        <li><a href="contact.html" class="legal-link">CONTACT</a></li>
+                        <li><a href="terms.html" class="legal-link">TERMS & CONDITIONS</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom-brand">
+                <span class="brand-text"
+                    onclick="window.scrollTo({top: 0, behavior: 'smooth'})">BLUEBERRY<br>STUDIO</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="newsletter.js"></script>
+    <script>
+        // Theme toggle logic would go here if needed
+    </script>
+    <!-- Full Screen Split Menu -->
+    <div class="fs-menu" id="fs-menu">
+        <div class="fs-menu-content">
+            <!-- Media Left (40%) -->
+            <div class="fs-menu-left">
+                <div class="fs-video-container">
+                    <video autoplay loop muted playsinline>
+                        <source src="assets/Contacts.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <!-- Nav Right (60%) -->
+            <div class="fs-menu-right">
+                <div class="fs-menu-header">
+                    <!-- Cross content serves as close -->
+                </div>
+
+                <div class="fs-download-wrapper">
+                    <a href="https://drive.google.com/file/d/1XlmICnHEWBBxSB2ut7rF_KneAJ4neHLg/view?usp=drive_link"
+                        target="_blank" class="fs-download-btn">
+                        Download Profile &rarr;
+                    </a>
+                </div>
+
+                <nav class="fs-nav-primary">
+                    <a href="about.html" class="fs-link" onclick="closeMenu()">About</a>
+                    <a href="projects.html" class="fs-link" onclick="closeMenu()">Projects</a>
+                    <a href="contact.html" class="fs-link" onclick="closeMenu()">Contact</a>
+                </nav>
+
+                <div class="fs-menu-footer">
+                    <div class="fs-footer-left">
+                        <div class="fs-contact-info">
+                            <a href="mailto:hello@blueb.studio" class="fs-contact-link">hello@blueb.studio</a>
+                            <a href="tel:+919407824148" class="fs-contact-link">+91 9407824148</a>
+                        </div>
+                    </div>
+
+                    <div class="fs-socials">
+                        <!-- Facebook -->
+                        <a href="https://www.facebook.com/Blueb.studio/" target="_blank" class="btn-studio social-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/blueb.studio" target="_blank" class="btn-studio social-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                            </svg>
+                        </a>
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/company/blueb-studio" target="_blank"
+                            class="btn-studio social-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z" />
+                            </svg>
+                        </a>
+                        <!-- GitHub -->
+                        <a href="https://github.com/blueb-studio" target="_blank" class="btn-studio social-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                        <!-- Behance -->
+                        <a href="https://www.behance.net/bluebstudio" target="_blank" class="btn-studio social-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M22,7.24a5.07,5.07 0 0,0-1.53-3.6,5.34,5.34 0 0,0-4-1.63H9.83a5.52,5.52 0 0,0-4.06,1.63,5.17,5.17 0 0,0-1.54,3.6v9.52a5.15,5.15 0 0,0,1.54,3.61,5.53,5.53 0 0,0,4.06,1.63H16.5a5.35,5.35 0 0,0,3.95-1.63,5.09,5.09 0 0,0,1.55-3.61ZM14.19,16.14H9.08a.74.74 0 0,1-.78-.73V13.88a.74.74 0 0,1,.78-.73h5.11a.74.74 0 0,1,.79.73v1.53A.74.74 0 0,1,14.19,16.14Zm2.75-5.32H9.08a.75.75 0 0,1-.78-.74v-1.6a.75.75 0 0,1,.78-.73H16.94a.75.75 0 0,1,.79.73v1.6A.75.75 0 0,1,16.94,10.82Z" />
+                            </svg>
+                        </a>
+                        <!-- Spotify -->
+                        <a href="https://open.spotify.com/user/31mnh5u7zrv3aj2t3qy35kmdyenm" target="_blank"
+                            class="btn-studio social-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.48.66.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141 4.2-1.32 9.6-.66 13.261 1.56.479.18.6.72.48 1.26zm.12-3.36C15.222 8.4 8.822 8.16 5.142 9.3c-.6.18-1.2-.18-1.38-.72-.18-.6.18-1.2.72-1.38 4.139-1.261 11.16-0.96 15.659 1.68.54.301.72 1.021.42 1.56-.3.42-1.02.6-1.44.3z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <a href="terms.html" class="fs-terms-link" onclick="closeMenu()">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Premium Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const fsMenu = document.getElementById('fs-menu');
+        const closeBtn = document.getElementById('fs-close-btn');
+        const body = document.body;
+        const header = document.querySelector('.header');
+
+        function openMenu() {
+            fsMenu.classList.add('active');
+            menuBtn.classList.add('active');
+            header.classList.add('menu-open');
+            body.classList.add('no-scroll');
+        }
+
+        function closeMenu() {
+            fsMenu.classList.remove('active');
+            menuBtn.classList.remove('active');
+            header.classList.remove('menu-open');
+            body.classList.remove('no-scroll');
+        }
+
+        function toggleMenu() {
+            if (fsMenu.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        }
+
+        if (menuBtn) {
+            menuBtn.addEventListener('click', toggleMenu);
+        }
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeMenu);
+        }
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && fsMenu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+    </script>
+
+    <script>
+        // Dark Mode Toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('theme-toggle');
+            const body = document.body;
+
+            // Check for saved theme preference or default to light mode
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-mode');
+            }
+
+            // Toggle dark mode
+            toggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                const isDark = body.classList.contains('dark-mode');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+                // Notify background to update
+                window.dispatchEvent(new CustomEvent('themechange', { detail: { isDark } }));
+            });
+        });
+    </script>
+
+    <script src="loader.js"></script>
+    <script src="cursor.js"></script>
+    <script src="lenis.min.js"></script>
+    <script src="smooth-scroll.js"></script>
+</body>
+
+</html>
