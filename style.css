@@ -1,4 +1,5 @@
 /* ===== LOADING SCREEN ===== */
+/* Smart loader - hidden by default, shown only when needed */
 .loader-screen {
     position: fixed;
     top: 0;
@@ -10,7 +11,8 @@
     /* Mobile Safari fix */
     background: #f8f8f8;
     z-index: 10000;
-    display: flex;
+    display: none;
+    /* Hidden by default - JS will show if needed */
     align-items: center;
     justify-content: center;
     transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
