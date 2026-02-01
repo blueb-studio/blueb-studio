@@ -1,4 +1,4 @@
-// Newsletter form submission handler with Mailchimp API integration
+// Newsletter form submission handler with Formspree integration
 // Handles form submission, loading states, and success/error messages
 
 (function () {
@@ -12,6 +12,11 @@
         const submitButton = form?.querySelector('.newsletter-submit');
 
         if (!form) return;
+
+        // Set form action to Formspree endpoint
+        // Using a public Formspree endpoint for blueb.studio newsletter
+        form.setAttribute('action', 'https://formspree.io/f/xwppkznb');
+        form.setAttribute('method', 'POST');
 
         form.addEventListener('submit', async function (e) {
             e.preventDefault();
@@ -30,23 +35,27 @@
             emailInput.disabled = true;
 
             try {
-                // Send request to serverless function
-                const response = await fetch('/api/subscribe', {
+                // Send request to Formspree
+                const response = await fetch(form.getAttribute('action'), {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
+                        'Accept': 'application/json'
                     },
-                    body: JSON.stringify({ email }),
+                    body: JSON.stringify({
+                        email: email,
+                        _subject: 'New Newsletter Subscription - Blueb.Studio'
+                    }),
                 });
 
                 const data = await response.json();
 
-                if (response.ok && data.success) {
+                if (response.ok) {
                     // Success - hide form and show success message
                     form.style.display = 'none';
                     successMessage.style.display = 'block';
 
-                    // Reset form after delay (in case user wants to subscribe another email)
+                    // Reset form after delay
                     setTimeout(() => {
                         form.reset();
                     }, 1000);
