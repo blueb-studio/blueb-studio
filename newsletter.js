@@ -13,11 +13,6 @@
 
         if (!form) return;
 
-        // Set form action to Formspree endpoint
-        // Using a public Formspree endpoint for blueb.studio newsletter
-        form.setAttribute('action', 'https://formspree.io/f/xwppkznb');
-        form.setAttribute('method', 'POST');
-
         form.addEventListener('submit', async function (e) {
             e.preventDefault();
 
@@ -36,7 +31,7 @@
 
             try {
                 // Send request to Formspree
-                const response = await fetch(form.getAttribute('action'), {
+                const response = await fetch('https://formspree.io/f/mojljkje', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
