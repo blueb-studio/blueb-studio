@@ -30,17 +30,15 @@
             emailInput.disabled = true;
 
             try {
-                // Send request to Formspree
-                const response = await fetch('https://formspree.io/f/mojljkje', {
+                // Send request to Mailchimp via our serverless API
+                const response = await fetch('/api/subscribe', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        email: email,
-                        _subject: 'New Newsletter Subscription - Blueb.Studio'
-                    }),
+                        email: email
+                    })
                 });
 
                 const data = await response.json();
@@ -55,13 +53,13 @@
                         form.reset();
                     }, 1000);
                 } else {
-                    // Show error message
+                    // Show error message from API
                     showError(data.error || 'Something went wrong. Please try again.');
                     resetForm();
                 }
             } catch (error) {
                 console.error('Subscription error:', error);
-                showError('Network error. Please check your connection and try again.');
+                showError('Unable to connect. Please check your internet and try again.');
                 resetForm();
             }
         });

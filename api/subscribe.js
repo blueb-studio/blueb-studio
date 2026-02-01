@@ -1,22 +1,22 @@
-// Serverless function for Mailchimp newsletter subscription
-// Compatible with Vercel, Netlify, and similar platforms
+// Vercel Serverless Function for Mailchimp Newsletter Subscription
+// This endpoint handles newsletter subscriptions via Mailchimp API
 
-const fetch = require('node-fetch');
+export default async function handler(req, res) {
+    // Set CORS headers
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,POST');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-module.exports = async (req, res) => {
+    // Handle preflight OPTIONS request
+    if (req.method === 'OPTIONS') {
+        res.status(200).end();
+        return;
+    }
+
     // Only allow POST requests
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
-    }
-
-    // CORS headers for cross-origin requests
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-    // Handle preflight request
-    if (req.method === 'OPTIONS') {
-        return res.status(200).end();
     }
 
     try {
@@ -24,37 +24,39 @@ module.exports = async (req, res) => {
 
         // Validate email
         if (!email || !email.includes('@')) {
-            return res.status(400).json({ error: 'Valid email is required' });
+            return res.status(400).json({
+                error: 'Please provide a valid email address'
+            });
         }
 
-        // Get credentials from environment variables
-        const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY;
-        const MAILCHIMP_AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID;
-        const MAILCHIMP_SERVER_PREFIX = process.env.MAILCHIMP_SERVER_PREFIX; // e.g., 'us1', 'us6'
+        // Get Mailchimp credentials from environment variables
+        const API_KEY = process.env.MAILCHIMP_API_KEY;
+        const AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID;
+        const SERVER_PREFIX = process.env.MAILCHIMP_SERVER_PREFIX;
 
-        // Validate environment variables
-        if (!MAILCHIMP_API_KEY || !MAILCHIMP_AUDIENCE_ID || !MAILCHIMP_SERVER_PREFIX) {
+        // Verify environment variables are set
+        if (!API_KEY || !AUDIENCE_ID || !SERVER_PREFIX) {
             console.error('Missing Mailchimp environment variables');
-            return res.status(500).json({ error: 'Server configuration error' });
+            return res.status(500).json({
+                error: 'Server configuration error. Please contact support.'
+            });
         }
 
         // Mailchimp API endpoint
-        const url = `https://${MAILCHIMP_SERVER_PREFIX}.api.mailchimp.com/3.0/lists/${MAILCHIMP_AUDIENCE_ID}/members`;
+        const url = `https://${SERVER_PREFIX}.api.mailchimp.com/3.0/lists/${AUDIENCE_ID}/members`;
 
         // Make request to Mailchimp
         const response = await fetch(url, {
             method: 'POST',
             headers: {
-                'Authorization': `Basic ${Buffer.from(`anystring:${MAILCHIMP_API_KEY}`).toString('base64')}`,
                 'Content-Type': 'application/json',
+                'Authorization': `Basic ${Buffer.from(`anystring:${API_KEY}`).toString('base64')}`
             },
             body: JSON.stringify({
                 email_address: email,
-                status: 'subscribed', // Use 'pending' for double opt-in
-                merge_fields: {
-                    // Add any additional fields here if needed
-                }
-            }),
+                status: 'subscribed',
+                tags: ['Website Newsletter']
+            })
         });
 
         const data = await response.json();
@@ -63,27 +65,26 @@ module.exports = async (req, res) => {
         if (response.ok) {
             return res.status(200).json({
                 success: true,
-                message: 'Successfully subscribed!'
+                message: 'Successfully subscribed to newsletter!'
             });
         } else {
-            // Check if already subscribed
+            // Handle specific Mailchimp errors
             if (data.title === 'Member Exists') {
-                return res.status(200).json({
-                    success: true,
-                    message: 'You are already subscribed!'
+                return res.status(400).json({
+                    error: 'This email is already subscribed to our newsletter.'
                 });
             }
 
-            console.error('Mailchimp error:', data);
+            console.error('Mailchimp API error:', data);
             return res.status(400).json({
-                error: data.detail || 'Subscription failed. Please try again.'
+                error: data.detail || 'Unable to subscribe. Please try again.'
             });
         }
 
     } catch (error) {
-        console.error('Server error:', error);
+        console.error('Subscription error:', error);
         return res.status(500).json({
-            error: 'An error occurred. Please try again later.'
+            error: 'An unexpected error occurred. Please try again later.'
         });
     }
-};
+}
