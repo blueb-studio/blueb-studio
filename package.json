@@ -1,0 +1,17 @@
+{
+  "name": "blueb-studio",
+  "version": "1.0.0",
+  "description": "Blueb Studio Website with Mailchimp Integration",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step required for static site'",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  },
+  "engines": {
+    "node": ">=14.x"
+  }
+}

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /.git/
+Disallow: /.gemini/
+
+Sitemap: https://blueb-studio.vercel.app/sitemap.xml
