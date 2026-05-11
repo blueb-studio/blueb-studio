@@ -1,4 +1,6 @@
 {
+    "outputDirectory": ".",
+    "buildCommand": null,
     "rewrites": [
         {
             "source": "/api/:path*",
