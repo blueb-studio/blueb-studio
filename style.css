@@ -1178,7 +1178,7 @@ body.no-scroll {
     font-family: 'Satoshi', sans-serif;
     font-size: 5rem;
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: none;
     color: var(--text-main);
     /* Ensure contrast */
     z-index: 1;
