@@ -1175,9 +1175,9 @@ body.no-scroll {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-family: 'BBH Bartle', var(--font-main);
+    font-family: 'Satoshi', sans-serif;
     font-size: 5rem;
-    font-weight: 500;
+    font-weight: 700;
     text-transform: uppercase;
     color: var(--text-main);
     /* Ensure contrast */
