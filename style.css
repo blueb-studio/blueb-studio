@@ -322,7 +322,7 @@ body.loaded main {
 }
 
 :root {
-    --font-main: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-main: 'Instagram Sans', 'InstagramSans', 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --page-padding: 4rem;
 
     /* Light mode colors (default) */
