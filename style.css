@@ -1176,7 +1176,7 @@ body.no-scroll {
     top: 50%;
     transform: translateY(-50%);
     font-family: 'Satoshi', sans-serif;
-    font-size: 5rem;
+    font-size: 7rem;
     font-weight: 700;
     text-transform: none;
     color: var(--text-main);
@@ -1231,7 +1231,7 @@ body.no-scroll {
 /* Tablet Large (1024px - 1280px) */
 @media (max-width: 1280px) {
     .hero-text-side {
-        font-size: 4rem;
+        font-size: 5.5rem;
     }
 
     .hero-video-container {
